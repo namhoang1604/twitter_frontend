@@ -1,1 +1,9 @@
-<button mat-button>test</button>
+<div class="page-container">
+  <mat-toolbar>
+    <span>Twitter</span>
+    <button mat-button (click)="openDialogToCreateTweet()">Tweet</button>
+  </mat-toolbar>
+  <div class="main-page-container">
+    <router-outlet></router-outlet>
+  </div>
+</div>
