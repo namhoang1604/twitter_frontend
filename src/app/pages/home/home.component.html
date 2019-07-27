@@ -1,7 +1,8 @@
 <div class="page-container">
-  <mat-list>
-    <mat-list-item *ngFor="let tweet of listTweet$">
-      <p>{{ tweet.content }}</p>
-    </mat-list-item>
-  </mat-list>
+  <div class="list-tweet-container">
+    <app-tweet-detail
+      [tweet]="tweet"
+      *ngFor="let tweet of listTweet$ | async"
+    ></app-tweet-detail>
+  </div>
 </div>
