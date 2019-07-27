@@ -5,11 +5,13 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { environment } from '@src/environments/environment';
 import { TweetStoreModule } from './tweet-store';
+import { UserStoreModule } from './user-store';
 
 @NgModule({
   imports: [
     CommonModule,
     TweetStoreModule,
+    UserStoreModule,
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({
