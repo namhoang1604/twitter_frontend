@@ -1,7 +1,16 @@
 <div class="page-container">
   <mat-toolbar>
     <span>Twitter</span>
-    <button mat-button (click)="openDialogToCreateTweet()">Tweet</button>
+    <button
+      class="tweet-button"
+      mat-flat-button
+      color="primary"
+      (click)="openDialogToCreateTweet()"
+    >
+      Tweet
+    </button>
+    <mat-icon>account_circle</mat-icon
+    ><span class="name-span">{{ (user$ | async).name }}</span>
   </mat-toolbar>
   <div class="main-page-container">
     <router-outlet></router-outlet>
