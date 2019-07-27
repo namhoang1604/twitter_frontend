@@ -5,6 +5,7 @@ import {
 } from '@ngrx/store';
 import { TweetState, tweetsAdapter } from './state';
 import { Tweet } from '@src/app/models/tweet';
+import { ActionTypes } from './actions';
 
 export const getError = (state: TweetState): any => state.error;
 
@@ -43,4 +44,9 @@ export const selectTweetIsLoading: MemoizedSelector<
 > = createSelector(
   selectTweetState,
   getIsLoading
+);
+
+export const selectType: MemoizedSelector<object, ActionTypes> = createSelector(
+  selectTweetState,
+  (state: TweetState) => state.type
 );
