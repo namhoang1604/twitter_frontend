@@ -1,0 +1,21 @@
+.tweet-container {
+  height: fit-content;
+  padding: 20px;
+  border: 1px solid rgb(230, 236, 240);
+  .tweet-header {
+    display: flex;
+    span {
+      line-height: 24px;
+    }
+    .owner-name {
+      text-transform: capitalize;
+      font-weight: 600;
+      margin: 0 10px;
+    }
+  }
+  .tweet-action {
+    .retweeted {
+      color: rgb(23, 191, 99);
+    }
+  }
+}

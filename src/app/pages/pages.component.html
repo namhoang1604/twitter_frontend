@@ -1,1 +1,18 @@
-<button mat-button>test</button>
+<div class="page-container" fxLayout="column" fxFlexFill>
+  <mat-toolbar>
+    <span>Twitter</span>
+    <button
+      class="tweet-button"
+      mat-flat-button
+      color="primary"
+      (click)="openDialogToCreateTweet()"
+    >
+      Tweet
+    </button>
+    <mat-icon>account_circle</mat-icon
+    ><span class="name-span">{{ (user$ | async).name }}</span>
+  </mat-toolbar>
+  <div class="main-page-container" fxFlex="auto">
+    <router-outlet></router-outlet>
+  </div>
+</div>

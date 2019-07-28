@@ -1,0 +1,21 @@
+<div class="tweet-container">
+  <div class="tweet-header">
+    <mat-icon>account_circle</mat-icon>
+    <span class="owner-name">{{ tweet.ownerName }}</span>
+    <span>{{ tweet.createdDate | date: 'shortDate' }}</span>
+  </div>
+  <div class="tweet-content">
+    <p>
+      {{ tweet.content }}
+    </p>
+  </div>
+  <div class="tweet-action">
+    <button
+      mat-flat-button
+      [ngClass]="{ retweeted: isRetweeted() }"
+      (click)="retweet()"
+    >
+      <mat-icon>repeat</mat-icon> {{ tweet.retweets.length }}
+    </button>
+  </div>
+</div>
