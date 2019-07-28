@@ -1,4 +1,4 @@
-<div class="page-container">
+<div class="page-container" fxLayout="column" fxFlexFill>
   <mat-toolbar>
     <span>Twitter</span>
     <button
@@ -12,7 +12,7 @@
     <mat-icon>account_circle</mat-icon
     ><span class="name-span">{{ (user$ | async).name }}</span>
   </mat-toolbar>
-  <div class="main-page-container">
+  <div class="main-page-container" fxFlex="auto">
     <router-outlet></router-outlet>
   </div>
 </div>
