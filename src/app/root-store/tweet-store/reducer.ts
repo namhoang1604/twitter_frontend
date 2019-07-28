@@ -15,7 +15,7 @@ export function tweetReducer(
       };
     }
     case ActionTypes.TWEETS_SUCCESS: {
-      return tweetsAdapter.addAll(action.payLoad.tweets, {
+      return tweetsAdapter.addMany(action.payLoad.tweets, {
         ...state,
         isLoading: false,
         error: null,

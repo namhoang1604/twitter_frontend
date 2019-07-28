@@ -23,7 +23,7 @@ export class TweetStoreEffects {
       tweetAction.ActionTypes.TWEETS_REQUEST
     ),
     switchMap(action =>
-      this.dataService.get('tweets').pipe(
+      this.dataService.get('tweets', action.payLoad).pipe(
         map(response => {
           const listTweet: Tweet[] = response.data.map(tweet =>
             convertToClass(tweet)

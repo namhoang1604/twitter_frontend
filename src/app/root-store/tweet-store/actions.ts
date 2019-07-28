@@ -16,6 +16,7 @@ export enum ActionTypes {
 
 export class TweetsRequestAction implements Action {
   readonly type = ActionTypes.TWEETS_REQUEST;
+  constructor(public payLoad: { page: number; limit: number }) {}
 }
 
 export class TweetsFailureAction implements Action {
