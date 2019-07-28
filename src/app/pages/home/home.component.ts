@@ -8,7 +8,6 @@ import {
 } from '@src/app/root-store/tweet-store';
 import { Tweet } from '@src/app/models/tweet';
 import { Observable } from 'rxjs';
-import { filter, mergeMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
