@@ -1,5 +1,7 @@
 import { Actions, ActionTypes } from './actions';
 import { tweetsAdapter, initialTweetState, TweetState } from './state';
+import { Update } from '@ngrx/entity';
+import { Tweet } from '@src/app/models/tweet';
 
 export function tweetReducer(
   state = initialTweetState,
@@ -77,6 +79,18 @@ export function tweetReducer(
         error: action.payLoad.error,
         type: action.type
       };
+    }
+    case ActionTypes.UPDATE_TWEET_FROM_CHANNEL: {
+      const updatedTweet: Update<Tweet> = {
+        id: action.payLoad.tweet.id,
+        changes: { ...action.payLoad.tweet }
+      };
+      return tweetsAdapter.updateOne(updatedTweet, {
+        ...state,
+        isLoading: true,
+        error: null,
+        type: action.type
+      });
     }
     default: {
       return state;

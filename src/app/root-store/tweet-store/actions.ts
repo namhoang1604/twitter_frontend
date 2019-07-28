@@ -11,7 +11,8 @@ export enum ActionTypes {
   CREATE_TWEETS_SUCCESS = '[Tweet] Create Tweet Success',
   RETWEET_TWEETS_REQUEST = '[Tweet] Retweet Tweet Request',
   RETWEET_TWEETS_FAILURE = '[Tweet] Retweet Tweet Failure',
-  RETWEET_TWEETS_SUCCESS = '[Tweet] Retweet Tweet Success'
+  RETWEET_TWEETS_SUCCESS = '[Tweet] Retweet Tweet Success',
+  UPDATE_TWEET_FROM_CHANNEL = '[Tweet] Tweets is updated from the Phoenix channel'
 }
 
 export class TweetsRequestAction implements Action {
@@ -59,6 +60,11 @@ export class TweetsRetweetSuccessAction implements Action {
   constructor(public payLoad: Update<Tweet>) {}
 }
 
+export class TweetsUpdateTweetFromChannelAction implements Action {
+  readonly type = ActionTypes.UPDATE_TWEET_FROM_CHANNEL;
+  constructor(public payLoad: { tweet: Tweet }) {}
+}
+
 export type Actions =
   | TweetsRequestAction
   | TweetsFailureAction
@@ -68,4 +74,5 @@ export type Actions =
   | TweetsCreateSuccessAction
   | TweetsRetweetAction
   | TweetsRetweetFailureAction
-  | TweetsRetweetSuccessAction;
+  | TweetsRetweetSuccessAction
+  | TweetsUpdateTweetFromChannelAction;

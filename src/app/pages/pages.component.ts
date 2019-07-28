@@ -5,6 +5,7 @@ import { BaseComponent } from '../components/base.component';
 import { Store } from '@ngrx/store';
 import { RootStoreState } from '../root-store';
 import { UserStoreActions, UserStoreSelectors } from '../root-store/user-store';
+import { PhoenixChannelService } from '../services/phoenix-channel/phoenix-channel.service';
 
 @Component({
   selector: 'app-pages',
@@ -22,6 +23,7 @@ export class PagesComponent extends BaseComponent implements OnInit {
   }
 
   ngOnInit() {
+    new PhoenixChannelService();
     this.user$ = this.store$.select(UserStoreSelectors.selectUser);
     this.store$.dispatch(new UserStoreActions.GenerateUserAction());
   }
