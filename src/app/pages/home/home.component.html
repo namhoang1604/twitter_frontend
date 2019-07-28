@@ -1,5 +1,5 @@
-<div class="page-container">
-  <div class="list-tweet-container">
+<div class="page-container" (scroll)="handleScroll($event)" fxLayout="column">
+  <div class="list-tweet-container" fxFlex="auto">
     <app-tweet-detail
       [tweet]="tweet"
       *ngFor="let tweet of listTweet$ | async"
